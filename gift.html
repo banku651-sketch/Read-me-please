@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Kuchupuchu ❤️</title>
+
+<link rel="stylesheet" href="gift.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="gift" onclick="openGift()">
+
+🎁
+
+</div>
+
+<h2>Tap the Gift ❤️</h2>
+
+<p id="message"></p>
+
+<button id="restart" onclick="restart()">
+
+Replay 🔄
+
+</button>
+
+</div>
+
+<script>
+
+function openGift(){
+
+document.querySelector(".gift").innerHTML="💖";
+
+document.getElementById("message").innerHTML=
+
+`Thank you for reading my letter ❤️<br><br>
+
+Whether you forgive me today,
+
+tomorrow,
+
+or later...
+
+I'll always respect your feelings.<br><br>
+
+From Your Panda 🐼❤️`;
+
+document.getElementById("restart").style.display="inline-block";
+
+createConfetti();
+
+}
+
+function restart(){
+
+location.href="index.html";
+
+}
+
+function createConfetti(){
+
+for(let i=0;i<80;i++){
+
+let c=document.createElement("div");
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.animationDuration=(2+Math.random()*3)+"s";
+
+c.style.background=
+
+["#ff4d6d","#ffd166","#ffffff","#ff9ec4","#7dd3fc"][Math.floor(Math.random()*5)];
+
+document.body.appendChild(c);
+
+setTimeout(()=>c.remove(),5000);
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
